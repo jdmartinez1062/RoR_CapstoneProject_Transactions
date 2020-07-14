@@ -6,8 +6,8 @@ class CreateTimeSpents < ActiveRecord::Migration[6.0]
       t.integer :autor_id
       t.string :name
       t.float :amount
-
-      t.timestamps
+      t.datetime :created_at, null: false
     end
+    add_index :time_spents, %i[autor_id created_at]
   end
 end
