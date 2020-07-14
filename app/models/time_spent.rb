@@ -1,0 +1,2 @@
+class TimeSpent < ApplicationRecord
+end
