@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Group < ApplicationRecord
   belongs_to :selected, class_name: :User, inverse_of: :groups
 
