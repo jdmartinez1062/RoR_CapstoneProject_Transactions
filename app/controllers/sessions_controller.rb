@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   include SessionsHelper
-  def new; end
+  def new
+    redirect_to current_user if current_user
+  end
 
   def create
     if (user = User.find_by(name: params[:session][:name]))
@@ -9,12 +11,12 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash.now[:warnign] = 'Log in unsuccessful'
-      render 'new'
+      render 'new', warnign: 'Log in unsuccessful'
     end
   end
 
   def destroy
-    flash[:success] = 'you have loggoed out successfully'
+    flash[:success] = 'you have logged out successfully'
     log_out
   end
 end
