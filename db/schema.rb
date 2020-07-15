@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_07_14_185946) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.integer "selected_id"
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_185946) do
     t.string "name"
     t.float "amount"
     t.datetime "created_at", null: false
-    t.index "\"autor_id\", \"created_at\"", name: "index_time_spents_on_autor_id_and_created_at"
+    t.index ["author_id", "created_at"], name: "index_time_spents_on_author_id_and_created_at"
   end
 
   create_table "users", force: :cascade do |t|
