@@ -1,0 +1,4 @@
+<div>
+    <%=image_tag (group.icon.url, alt: 'Image') if group.image? %>
+</div>
+<%=link_to "#{group.name}", group_path(group) %>
