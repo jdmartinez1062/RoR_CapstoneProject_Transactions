@@ -1,0 +1,2 @@
+class TimeSpentsController < ApplicationController
+end
