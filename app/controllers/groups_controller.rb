@@ -24,6 +24,8 @@ class GroupsController < ApplicationController
     @group = Group.find_by(id: params[:id])
   end
 
+  def group_times; end
+
   private
 
   def group_params

@@ -20,7 +20,11 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
   # @time_spents = TimeSpent.autor.all.paginate(page: params[:page])
+  def user_times; end
+
+  def external_times; end
 
   private
 

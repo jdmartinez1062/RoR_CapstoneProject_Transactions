@@ -1,4 +1,4 @@
-<%=form_for @time_spents do |t|%>
+<%=form_for @time_spent do |t|%>
 
 <%=render "shared/error_messages", object: t.object%>
 
@@ -6,6 +6,7 @@
 <%=t.text_field :name%>
 <%=t.label :amount%>
 <%=t.number_field :amount, step: :any%>
+<%=t.collection_select :group, Group.order(:name),:id,:name, {:selected => current_book.authors.map(&:id)} %>
 
 <%=t.submit "Create new group"%>
 
