@@ -1,11 +1,5 @@
 <h2>Group Transactions</h2>
 <div>
-    <%=image_tag (@group.icon.url, alt: 'Image') if @group.image? %>
+    <%=image_tag(@group.icon.url, alt: 'Image') if @group.icon? %>
 </div>
 <p><%=@group.name%></p>
-
-<!-- must be changed to transactions index with a scope-->
-
-<%=will_paginate @transactions%>
-<%=render partial: 'shared/transactions', collection: @transactions%>
-<%=will_paginate @transactions%>

@@ -4,11 +4,11 @@
 
 <%=t.label :name%>
 <%=t.text_field :name%>
-
-<%=t.submit "Log in!"%>
 <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    <%= t.file_field :icon, accept: 'image/jpeg,image/gif,image/png' %>
 </span>
+<%=t.submit "Create new group"%>
+
 <%end%>
 <script type="text/javascript">
     $('#group_icon').bind('change', function () {

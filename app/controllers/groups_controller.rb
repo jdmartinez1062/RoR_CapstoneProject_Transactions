@@ -1,16 +1,27 @@
 class GroupsController < ApplicationController
+  include SessionsHelper
   def index
-    @groups = Groups.all.paginate(page: params[:page])
-end
+    @groups = Group.all.paginate(page: params[:page])
+  end
 
   def new
     @group = Group.new
   end
 
-  def create; end
+  def create
+    @group = Group.new(group_params)
+    @group.selected = current_user
+    if @group.save
+      flash[:success] = "New group #{@group.name} create successfully"
+      redirect_to @group
+    else
+      flash[:warnign] = "New group couldn't be created"
+      render 'new'
+    end
+  end
 
   def show
-    @group = Group.find_by(id: params(:id))
+    @group = Group.find_by(id: params[:id])
   end
 
   private
