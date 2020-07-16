@@ -1,0 +1,12 @@
+<%=form_for @time_spents do |t|%>
+
+<%=render "shared/error_messages", object: t.object%>
+
+<%=t.label :name%>
+<%=t.text_field :name%>
+<%=t.label :amount%>
+<%=t.number_field :amount, step: :any%>
+
+<%=t.submit "Create new group"%>
+
+<%end%>
