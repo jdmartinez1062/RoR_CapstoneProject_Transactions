@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get 'user/group/times/:id', to: 'user#user_times', as: 'user_times'
-  get 'user/external/times/:id', to: 'user#external', as: 'external_times'
-  get 'group/times/:id', to: 'group#group_times', as: 'group_times'
+  get 'user/:id/grouptimes', to: 'user#user_times', as: 'user_times'
+  get 'user/:id/externaltimes', to: 'user#external', as: 'external_times'
+  get 'group/:id/times', to: 'group#group_times', as: 'group_times'
 end

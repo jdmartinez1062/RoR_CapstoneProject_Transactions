@@ -21,10 +21,15 @@ class UsersController < ApplicationController
     end
   end
 
-  # @time_spents = TimeSpent.autor.all.paginate(page: params[:page])
-  def user_times; end
+  def user_times
+    @time_spents = current_user.group_time_spents.paginate(page: params[:page])
+    @total = @time_spents.total
+  end
 
-  def external_times; end
+  def external_times
+    @time_spents = current_user.external_time_spents.paginate(page: params[:page])
+    @total = @time_spents.total
+  end
 
   private
 
