@@ -1,7 +1,14 @@
+def log_in_with(name)
+  visit login_path
+
+  fill_in 'Name', with: name
+  click_button 'Log in'
+end
 RSpec.feature 'New Group', type: :feature do
   let!(:user1) { User.create(name: 'test1') }
 
   scenario 'User creates a group with correct information' do
+    log_in_with(user1.name)
     visit new_group_path
 
     fill_in 'Name', with: 'dev1'
