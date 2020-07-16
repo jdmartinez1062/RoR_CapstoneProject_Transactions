@@ -1,0 +1,4 @@
+<%= link_to "Create new", new_group_path %>
+<%=will_paginate @groups%>
+<%=render partial: 'group', collection: @groups%>
+<%=will_paginate @groups%>
