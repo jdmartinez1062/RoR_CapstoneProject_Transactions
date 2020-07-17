@@ -1,4 +1,16 @@
-<%=@total%>
+<%if action_name == "user_times"%>
+<h1><%="User Group Times"%></h1>
+<%elsif action_name == "external_times"%>
+<h1> <%="External Times"%></h1>
+<%elsif action_name == "group_times"%>
+<h1><%="Group Times"%></h1>
+<%end%>
+
+
+<div>
+    <h4>Total hours:</h4><%=@total%>
+</div>
+
 
 <%=will_paginate @time_spents%>
 <%=render partial: 'shared/time_spent', collection: @time_spents%>

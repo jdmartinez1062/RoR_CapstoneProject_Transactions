@@ -7,10 +7,9 @@ class TimeSpentsController < ApplicationController
 
   def create
     @time_spent = group_presence
-
     if @time_spent.save
       flash[:success] = 'Time spent logged successfully'
-      redirect_to group_times_path
+      redirect_to group_times_path(find_group)
     else
       flash.now[:warnign] = 'There was a problem'
       render 'new'
@@ -23,15 +22,21 @@ class TimeSpentsController < ApplicationController
     params.require(:time_spent).permit(:name, :amount)
   end
 
-  def group_param
-    params.require(:time_spent).permit(:group)
+  def group_params
+    params.require(:time_spent).permit(:groups)
   end
 
   def group_presence
-    if (group = Group.find_by(id: group_param[:group]))
-      group.time_spents.build(time_params, author_id: current_user.id)
+    if (group = find_group)
+
+      group.time_spents.build(time_params.merge(author_id: current_user.id))
+
     else
-      current_user.build(time_params)
+      current_user.time_spents.build(time_params)
     end
+  end
+
+  def find_group
+    Group.find_by(id: group_params[:groups])
   end
 end

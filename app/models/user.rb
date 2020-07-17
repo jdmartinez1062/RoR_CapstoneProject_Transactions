@@ -8,10 +8,10 @@ class User < ApplicationRecord
 
   def external_time_spents
     external_times = TimeSpent.external
-    external_times.where(author_id: id)
+    external_times.where(author_id: id).map(&:amount)
   end
 
   def group_time_spents
-    groups.where(selected_id: id).time_spents
+    groups.include(:time_spents).time_spents.map(&:amount)
   end
 end
