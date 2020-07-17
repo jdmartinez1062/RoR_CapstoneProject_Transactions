@@ -25,9 +25,11 @@ class GroupsController < ApplicationController
   end
 
   def group_times
-    Group.find_by(id: params[:id])
-    @time_spents = time_spents.all.paginate(page: params[:page])
+    group = Group.find_by(id: params[:id])
+    @time_spents = group.time_spents.paginate(page: params[:page])
+    byebug
     @total = @time_spents.total
+    render 'time_spents/index'
   end
 
   private
