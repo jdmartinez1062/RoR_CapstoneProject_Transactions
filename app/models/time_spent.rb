@@ -1,6 +1,7 @@
 class TimeSpent < ApplicationRecord
   belongs_to :author, class_name: :User, foreign_key: :author_id, inverse_of: :time_spents
-  has_and_belongs_to_many :groups, foreign_key: :time_log_id, association_foreign_key: :group_id, inverse_of: :time_spents, join_table: 'groups_times', class_name: :Group
+  has_and_belongs_to_many :groups, foreign_key: :time_log_id, association_foreign_key: :group_id,
+                                   inverse_of: :time_spents, join_table: 'groups_times', class_name: :Group
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
