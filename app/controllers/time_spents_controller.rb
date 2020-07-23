@@ -6,8 +6,8 @@ class TimeSpentsController < ApplicationController
   end
 
   def create
-    @time_spent = group_presence
-    if @time_spent.save
+    if group_presence
+
       flash[:success] = 'Time spent logged successfully'
       redirect_to group_times_path(find_group)
     else
@@ -29,10 +29,10 @@ class TimeSpentsController < ApplicationController
   def group_presence
     if (group = find_group)
 
-      group.time_spents.build(time_params.merge(author_id: current_user.id))
+      group.time_spents.create(time_params.merge(author_id: current_user.id))
 
     else
-      current_user.time_spents.build(time_params)
+      current_user.time_spents.create(time_params)
     end
   end
 
