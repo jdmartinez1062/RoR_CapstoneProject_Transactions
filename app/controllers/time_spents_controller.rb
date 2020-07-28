@@ -7,9 +7,8 @@ class TimeSpentsController < ApplicationController
 
   def create
     if group_presence
-
       flash[:success] = 'Time spent logged successfully'
-      redirect_to group_times_path(find_group)
+      redirect_to user_path(current_user)
     else
       flash.now[:warnign] = 'There was a problem'
       render 'new'

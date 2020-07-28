@@ -7,11 +7,12 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }, uniqueness: { case_sensitive: false }
 
   def external_time_spents
-    external_times = TimeSpent.external
-    external_times.where(author_id: id).map(&:amount)
+    TimeSpent.external.select('time_spents.id as time_id, time_spents.amount as time_amount,
+      time_spents.name as time_name, time_spents.created_at as time_log')
   end
 
   def group_time_spents
-    groups.include(:time_spents).time_spents.map(&:amount)
+    groups.select('groups.*, time_spents.id as time_id, time_spents.amount as time_amount,
+       time_spents.name as time_name, time_spents.created_at as time_log').left_outer_joins(:time_spents)
   end
 end

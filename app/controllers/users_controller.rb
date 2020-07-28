@@ -22,14 +22,14 @@ class UsersController < ApplicationController
   end
 
   def user_times
-    @time_spents = current_user.groups.first.time_spents.paginate(page: params[:page])
-    @total = 0
+    @time_spents = current_user.group_time_spents.paginate(page: params[:page])
+    @total = @time_spents.calculate(:sum, :amount)
     render 'time_spents/index'
   end
 
   def external_times
-    @time_spents = current_user.groups.first.time_spents.paginate(page: params[:page])
-    @total = 0
+    @time_spents = current_user.external_time_spents.paginate(page: params[:page])
+    @total = @time_spents.total
     render 'time_spents/index'
   end
 
