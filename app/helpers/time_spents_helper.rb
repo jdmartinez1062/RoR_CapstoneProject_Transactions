@@ -12,4 +12,8 @@ module TimeSpentsHelper
   def author_name
     current_user.name if action_name == 'group_times'
   end
+
+  def find_group(group_id)
+    Group.find_by(id: group_id)
+  end
 end
