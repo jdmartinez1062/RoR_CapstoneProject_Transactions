@@ -9,9 +9,9 @@ class TimeSpent < ApplicationRecord
   validates :amount, presence: true, numericality: { less_than_or_equal_to: 24 }
   def self.external
     where(<<-SQL)
-      NOT EXISTS (SELECT 1 
-        FROM   groups_times 
-        WHERE  time_spents.id = groups_times.time_log_id) 
+      NOT EXISTS (SELECT 1
+        FROM   groups_times
+        WHERE  time_spents.id = groups_times.time_log_id)
     SQL
   end
 
