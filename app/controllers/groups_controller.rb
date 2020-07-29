@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
   include SessionsHelper
+  before_action :require_login, only: %i[create new]
+
   def index
     @groups = Group.all.paginate(page: params[:page])
   end

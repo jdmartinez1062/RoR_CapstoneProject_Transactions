@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  before_action :require_login, only: %i[show]
   def new
     @user = User.new
   end

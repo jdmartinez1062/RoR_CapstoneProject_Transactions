@@ -1,5 +1,6 @@
 class TimeSpentsController < ApplicationController
   include SessionsHelper
+  before_action :require_login, only: %i[create new]
 
   def new
     @time_spent = TimeSpent.new
