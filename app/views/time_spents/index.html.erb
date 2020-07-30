@@ -1,0 +1,9 @@
+<h1><%=time_spents_title%></h1>
+<div>
+    <h4>Total hours:</h4><%=@total%>
+</div>
+
+
+<%=will_paginate @time_spents%>
+<div><%=render partial: 'shared/time_spent', collection: @time_spents%></div>
+<%=will_paginate @time_spents%>

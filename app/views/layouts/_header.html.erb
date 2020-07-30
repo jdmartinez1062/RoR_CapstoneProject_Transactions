@@ -4,6 +4,8 @@
         <li><%= link_to "All Groups", groups_path %></li>
         <% if logged_in? %>
         <li><%=link_to "Profile", user_path(current_user) %></li>
+        <li><%=link_to "My Group Transactions", user_times_path(current_user) %></li>
+        <li><%=link_to "New Transaction", new_time_spent_path%></li>
         <li><%=link_to "Log out", logout_path, method: :delete %></li>
         <% else %>
         <li><%=link_to "Sign up", signup_path%></li>
@@ -11,3 +13,5 @@
         <% end %>
     </ul>
 </nav>
+
+<h1>Indie Developer Log</h1>

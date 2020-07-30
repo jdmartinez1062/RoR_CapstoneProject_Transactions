@@ -1,0 +1,9 @@
+<div>
+    <%=link_to(image_tag(time_spent.icon.url, alt: 'Image') , group_path(find_group(time_spent.id))) if (time_spent.class == Group) %>
+</div>
+<div>
+    <p><%=author_name%></p>
+    <p><%=time_spent.time_name%></p>
+    <p><%=time_spent.time_amount%></p>
+    <p><%=time_spent.time_log%></p>
+</div>

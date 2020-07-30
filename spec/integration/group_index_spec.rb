@@ -1,8 +1,7 @@
-def log_in_with(name)
-  visit login_path
+require './spec/helpers/helpers'
 
-  fill_in 'Name', with: name
-  click_button 'Log in'
+RSpec.configure do |c|
+  c.include Helpers
 end
 RSpec.feature 'Group Index', type: :feature do
   let!(:user1) { User.create(name: 'test1') }

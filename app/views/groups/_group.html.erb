@@ -1,5 +1,5 @@
 <div>
-    <%=image_tag (group.icon.url, alt: 'Image') if group.image? %>
+    <%=image_tag(group.icon.url, alt: 'Image') if group.icon?%>
 </div>
 <%=link_to "#{group.name}", group_path(group) %>
-<p><%=@group.created_at%></p>
+<p><%=group.created_at%></p>

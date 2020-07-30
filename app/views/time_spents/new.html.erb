@@ -1,0 +1,13 @@
+<%=form_for @time_spent, url: new_time_spent_path, method: :post do |t|%>
+
+<%=render "shared/error_messages", object: t.object%>
+
+<%=t.label :name%>
+<%=t.text_field :name%>
+<%=t.label :amount%>
+<%=t.number_field :amount, step: :any%>
+<%=t.collection_select :groups, Group.all.order(:name),:id,:name, include_blank: :true %>
+
+<%=t.submit "Submit time spent"%>
+
+<%end%>

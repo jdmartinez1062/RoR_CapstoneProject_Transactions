@@ -1,5 +1,7 @@
 <h2>Group Transactions</h2>
+
 <div>
     <%=image_tag(@group.icon.url, alt: 'Image') if @group.icon? %>
 </div>
 <p><%=@group.name%></p>
+<%=link_to "Group time spents", group_times_path(@group) %>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  before_action :require_login, only: %i[show]
   def new
     @user = User.new
   end
@@ -19,6 +20,18 @@ class UsersController < ApplicationController
       flash.now[:warnign] = 'There was a problem'
       render 'new'
     end
+  end
+
+  def user_times
+    @time_spents = current_user.group_time_spents.paginate(page: params[:page])
+    @total = @time_spents.calculate(:sum, :amount)
+    render 'time_spents/index'
+  end
+
+  def external_times
+    @time_spents = current_user.external_time_spents.paginate(page: params[:page])
+    @total = @time_spents.total
+    render 'time_spents/index'
   end
 
   private

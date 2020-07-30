@@ -87,8 +87,7 @@ git clone https://github.com/jdmartinez1062/RoR_CapstoneProject_Transactions
 
 1. Visit the web page
    
-        https://murmuring-shore-10170.herokuapp.com/
-
+        https://git.heroku.com/shielded-forest-28063.git
 
 2. Open Console
 
