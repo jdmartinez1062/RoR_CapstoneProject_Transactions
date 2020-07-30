@@ -12,16 +12,16 @@ RSpec.describe UsersController, type: :request do
   describe 'user attempts to create a time spent with out logging in ' do
     it 'fails' do
       expect do
-        # post new_time_spent_path(params: { time_spents: { name: 'Movement script', amount: 2, author_id: user1.id, group: group1.id } })
+        post new_time_spent_path(params: { time_spent: { name: 'Movement script', amount: 2, author_id: user1.id, group: group1.id } })
       end.to change(user1.time_spents, :count).by(0)
     end
   end
 
   describe 'user attempts to create a time spent when logged in ' do
     it 'succeeds' do
-      log_in_with(user1.name)
+      post login_path(params: {session: {name: user1.name}})
       expect do
-        # post new_time_spent_path(params: { time_spents: { name: 'Movement script', amount: 2, author_id: user1.id, group: group1.id } })
+        post new_time_spent_path(params: { time_spent: { name: 'Movement script', amount: 2, author_id: user1.id, group: group1.id } })
       end.to change(user1.time_spents, :count).by(1)
     end
   end
