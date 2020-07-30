@@ -4,7 +4,7 @@ RSpec.configure do |c|
   c.include Helpers
 end
 RSpec.feature 'Transactions', type: :feature do
-  let!(:user1) { User.create(name: 'test1') }
+  let!(:user1) { User.create(name: 'test1', avatar: test_img_path) }
   let!(:group1) { user1.groups.create(name: 'Senior dev', icon: test_img_path) }
   let!(:transaction1) { group1.time_spents.create(name: 'Movement script', amount: 2, author_id: user1.id) }
   before(:each) { standard_procedure }

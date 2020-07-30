@@ -4,7 +4,7 @@ RSpec.configure do |c|
   c.include Helpers
 end
 RSpec.feature 'Group Index', type: :feature do
-  let!(:user1) { User.create(name: 'test1') }
+  let!(:user1) { User.create(name: 'test1', avatar: test_img_path) }
 
   scenario 'Shows all the created groups' do
     log_in_with(user1.name)

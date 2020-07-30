@@ -5,7 +5,7 @@ RSpec.configure do |c|
 end
 
 RSpec.feature 'Transactions', type: :feature do
-  let!(:user1) { User.create(name: 'test1') }
+  let!(:user1) { User.create(name: 'test1', avatar: test_img_path) }
   let!(:group1) do
     user1.groups.create(name: 'Senior dev',
                         icon: File.new(Rails.root + 'spec/fixtures/Sprite-0003.png', 'r'))

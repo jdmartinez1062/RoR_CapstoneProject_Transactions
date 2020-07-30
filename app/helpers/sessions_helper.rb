@@ -26,4 +26,11 @@ module SessionsHelper
     @current_user = nil
     redirect_to root_path
   end
+
+  def require_login
+    return unless current_user.nil?
+
+    flash[:danger] = 'Please log in.'
+    redirect_to login_url
+  end
 end

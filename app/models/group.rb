@@ -5,6 +5,7 @@ class Group < ApplicationRecord
                                         inverse_of: :groups, join_table: 'groups_times'
   mount_uploader :icon, IconUploader
   validates :name, presence: true, length: { maximum: 20 }
+  validates :icon, presence: true
 
   def group_spents
     time_spents.select('time_spents.id as time_id, time_spents.amount as time_amount,
