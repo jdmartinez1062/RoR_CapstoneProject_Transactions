@@ -3,7 +3,9 @@ RSpec.feature 'Signup', type: :feature do
     visit signup_path
 
     fill_in 'Name', with: 'test1'
+    attach_file('user_avatar', Rails.root + 'spec/fixtures/img1.jpg')
     click_button 'Sign up'
+
     current_user = User.find_by(name: 'test1')
     expect(page).to have_current_path(user_path(current_user))
     expect(page).to have_css('p', text: current_user.name.to_s)

@@ -1,5 +1,5 @@
 RSpec.feature 'Login', type: :feature do
-  let!(:user1) { User.create(name: 'test1') }
+  let!(:user1) { User.create(name: 'test1', avatar: test_img_path) }
 
   scenario 'User visits the Log in page and logs in with correct information' do
     visit login_path

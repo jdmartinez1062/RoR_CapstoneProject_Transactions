@@ -4,7 +4,7 @@ RSpec.configure do |c|
   c.include Helpers
 end
 RSpec.feature 'New Group', type: :feature do
-  let!(:user1) { User.create(name: 'test1') }
+  let!(:user1) { User.create(name: 'test1', avatar: test_img_path) }
 
   scenario 'User creates a group with correct information' do
     log_in_with(user1.name)
@@ -17,6 +17,7 @@ RSpec.feature 'New Group', type: :feature do
     expect(page).to have_current_path(group_path(group))
   end
   scenario 'User creates a group with incorrect correct information' do
+    log_in_with(user1.name)
     visit new_group_path
 
     fill_in 'Name', with: ''

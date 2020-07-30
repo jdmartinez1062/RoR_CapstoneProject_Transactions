@@ -1,5 +1,7 @@
 <h1>Profile page</h1>
-
+<div>
+    <%=image_tag(@user.avatar.url, alt: 'Image') if @user.avatar?%>
+</div>
 <p><%=@user.name%></p>
 <%=link_to "All groups", groups_path %>
 <%=link_to "My work times", user_times_path %>
