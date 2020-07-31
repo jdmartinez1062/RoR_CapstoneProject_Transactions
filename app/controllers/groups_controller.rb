@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    end
+  end
 
   def create
     @group = Group.new(group_params)
@@ -24,7 +24,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find_by(id: params[:id])
-
   end
 
   def group_times
