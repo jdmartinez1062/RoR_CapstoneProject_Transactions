@@ -1,18 +1,27 @@
 <nav class="navbar">
-    <p>asas</p>
     <ul class="d-flex flex-row">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "All Groups", groups_path %></li>
+        <li><div></div>
+        <div><%= link_to "Home", root_path %></div></li>
+        <li><div></div>
+        <div><%= link_to "All Groups", groups_path %></div></li>
         <% if logged_in? %>
-        <li><%=link_to "Profile", user_path(current_user) %></li>
-        <li><%=link_to "My Group Transactions", user_times_path(current_user) %></li>
-        <li><%=link_to "New Transaction", new_time_spent_path%></li>
-        <li><%=link_to "Log out", logout_path, method: :delete %></li>
+        <li><div></div>
+        <div><%=link_to "Profile", user_path(current_user) %></div></li>
+        <li><div></div>
+        <div><%=link_to "My Group Transactions", user_times_path(current_user) %></div></li>
+        <li><div></div>
+        <div><%=link_to "New Transaction", new_time_spent_path%></div></li>
+        <li><div></div>
+        <div><%=link_to "Log out", logout_path, method: :delete %></div></li>
         <% else %>
-        <li><%=link_to "Sign up", signup_path%></li>
-        <li><%=link_to "Log in", login_path%></li>
+        <li><div></div>
+        <div><%=link_to "Sign up", signup_path%></div></li>
+        <li><div></div>
+        <div><%=link_to "Log in", login_path%></div></li>
         <% end %>
     </ul>
 </nav>
 
 <h1>Indie Developer Log</h1>
+
+
