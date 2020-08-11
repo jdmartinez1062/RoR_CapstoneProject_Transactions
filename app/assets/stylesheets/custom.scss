@@ -1,3 +1,21 @@
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: lighter;
+  font-display: auto;
+  src: font-url("proximanova-light.otf") format('opentype')
+  
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: bold;
+  font-display: auto;
+  src: font-url("proximanova-bold.otf") format('opentype')
+}
+
 html,
 body,
 div,
@@ -131,8 +149,9 @@ table {
 }
 
 html {
-  font-size: 14px;
+  font-size: 30px;
   line-height: 1;
+  height: 100px;
 }
 
 *,
@@ -143,9 +162,54 @@ html {
   box-sizing: border-box;
   text-decoration: none;
 }
+body{
+  background: rgb(15,37,87);
+  background: linear-gradient(225deg, rgba(15,37,87,1) 0%, rgba(55,120,194,1) 50%, rgba(75,159,225,1) 100%);
+  
+}
 
-a {
+a.link {
   text-decoration: none;
-  color: inherit;
-  font-family: inherit;
+  color: whitesmoke;
+  font-family: "Proxima Nova";
+  font-weight: lighter;
+  font-size: 50px;
+}
+
+img.icons{
+ height: 50px;
+ width: 50px;
+ 
+}
+div.icons{
+  height: 100px;
+  width: 100px;
+  background: url(asset_path("icons/circle.svg")) no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+li.menu{
+  height: 140px;
+  padding: 20px;
+}
+
+h1{
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  font-size: 30px;
+}
+
+
+h1, h2, h3, label, p{
+  color: whitesmoke;
+}
+div.nav-div{
+
+}
+div.content-div
+{
+
 }

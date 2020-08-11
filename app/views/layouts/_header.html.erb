@@ -1,27 +1,49 @@
-<nav class="navbar">
-    <ul class="d-flex flex-row">
-        <li><div></div>
-        <div><%= link_to "Home", root_path %></div></li>
-        <li><div></div>
-        <div><%= link_to "All Groups", groups_path %></div></li>
+<div class="container-fluid p-3 pt-5">
+    <nav class="navbar p-0 d-flex flex-column  align-items-start"></nav>
+    <h1>Indie Dev Log</h1>
+    <ul class="d-flex flex-column">
+
+        <li class="d-flex menu">
+
+            <div class="icons"><%= image_tag "icons/groups.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%= link_to "All Groups", groups_path, class: "link d-flex" %>
+            </div>
+        </li>
         <% if logged_in? %>
-        <li><div></div>
-        <div><%=link_to "Profile", user_path(current_user) %></div></li>
-        <li><div></div>
-        <div><%=link_to "My Group Transactions", user_times_path(current_user) %></div></li>
-        <li><div></div>
-        <div><%=link_to "New Transaction", new_time_spent_path%></div></li>
-        <li><div></div>
-        <div><%=link_to "Log out", logout_path, method: :delete %></div></li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/log_in.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "Profile", user_path(current_user), class: "link" %></div>
+        </li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/time.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "My Group Transactions", user_times_path(current_user), class: "link" %></div>
+        </li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/groups.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "New Transaction", new_time_spent_path, class: "link"%></div>
+        </li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/groups.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "Log out", logout_path, method: :delete, class: "link" %></div>
+        </li>
         <% else %>
-        <li><div></div>
-        <div><%=link_to "Sign up", signup_path%></div></li>
-        <li><div></div>
-        <div><%=link_to "Log in", login_path%></div></li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/login.svg", alt: "Log in", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2"><%=link_to "Log in", login_path, class: "link"%>
+            </div>
+        </li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/sign_up.svg", alt: "Sing up", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "Sign up", signup_path, class: "link"%>
+            </div>
+        </li>
         <% end %>
     </ul>
-</nav>
-
-<h1>Indie Developer Log</h1>
-
-
+    </nav>
+</div>

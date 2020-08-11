@@ -15,13 +15,16 @@
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
 
-  <div>
-    <%= render 'layouts/header'%>
+  <div class="d-flex flex-row">
+    <div class="container-fluid nav-div">
+      <%= render 'layouts/header'%>
+    </div>
+
+    <div class="container-fluid content-div">
+      <%= yield %>
+    </div>
   </div>
-  
-  <div>
-    <%= yield %>
-  </div>
+
 
 </body>
 
