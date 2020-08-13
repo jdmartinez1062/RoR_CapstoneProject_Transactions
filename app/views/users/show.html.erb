@@ -1,5 +1,5 @@
-<h1>Profile page</h1>
-<div>
+<%=page_heading('User profile')%>
+<div class="d-flex align-items-center flex-column">
     <%=image_tag(@user.avatar.url, alt: 'Image') if @user.avatar?%>
 </div>
 <p><%=@user.name%></p>

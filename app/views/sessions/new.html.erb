@@ -1,10 +1,14 @@
+<%=page_heading('Log in')%>
+
 <%=form_for(:session, url: login_path) do |t|%>
 
+<div class="form-field">
 
-<%=t.label :name%>
-<%=t.text_field :name%>
+    <%=t.text_field :name, placeholder: "Name"%>
+</div>
+<div class="form-button"><%=t.submit "Log in!", class: "submit"%></div>
 
-<%=t.submit "Log in!"%>
+
 
 <% end %>
-<p>Not an user? <%= link_to "Sign up now!", signup_path %></p>
+<p class=" block mt-2 mb-1">Not an user? <%= link_to "Sign up now!", signup_path %></p>

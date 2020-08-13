@@ -1,13 +1,30 @@
+<%=page_heading('Sign In')%>
 <%=form_for @user, url: signup_path, method: :post do |u|%>
 
 <%=render "shared/error_messages", object: u.object%>
 
-<%=u.label :name%>
-<%=u.text_field :name%>
-<span class="picture">
-    <%= u.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
-</span>
-<%=u.submit "Sign up!"%>
+
+<div class="form-field ">
+    <div class="picture d-flex  align-items-center">
+        <%= image_tag "icons/user_avatar.svg", alt: "Groups", class: "avatar-icon", id: "target"%>
+        <p class="pl-3">Upload a picture</p>
+        <%= u.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
+
+    </div>
+</div>
+
+<div class="form-field ">
+
+    <%=u.text_field :name, placeholder: "Full name"%>
+
+</div>
+
+
+
+<div class="form-button">
+    <%=u.submit "Sign up!", class: "submit"%>
+</div>
+
 
 <%end%>
 <script type="text/javascript">
@@ -16,5 +33,27 @@
         if (size_in_megabytes > 5) {
             alert('Maximum file size is 5MB. Please choose a smaller file.');
         }
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#user_avatar').on('change', function (event) {
+            var files = event.target.files;
+            var image = files[0]
+            // here's the file size
+            console.log(image.size);
+            var reader = new FileReader();
+            reader.onload = function (file) {
+                var img = new Image();
+                console.log(file);
+                img.src = file.target.result;
+                $('#target')
+                    .attr('src', file.target.result)
+
+            }
+            reader.readAsDataURL(image);
+            console.log(files);
+        });
     });
 </script>
