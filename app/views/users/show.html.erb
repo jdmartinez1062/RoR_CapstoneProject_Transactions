@@ -1,6 +1,6 @@
 <%=page_heading('User profile')%>
 <div class="d-flex align-items-center flex-column">
-    <%=image_tag(@user.avatar.url, alt: 'Image') if @user.avatar?%>
+    <%=image_tag(@user.avatar.url, alt: 'Image', class: "profile-image") if @user.avatar?%>
 </div>
 <p><%=@user.name%></p>
 <%=link_to "All groups", groups_path %>
