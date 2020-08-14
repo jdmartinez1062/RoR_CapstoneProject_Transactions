@@ -310,9 +310,7 @@ div.menu{
 vertical-align: middle;
  
 }
-img.avatar-icon{
-  height: 64px;
-}
+
 .picture{
   position: relative;
   width: 100%;
@@ -368,7 +366,10 @@ div.form-button{
   font: 1.7rem "Proxima Nova";
   padding: 1rem;
 }
-// .profile-image{
+.profile-image{
   
-//   max-height: 200px;
-// }
+  max-height: 200px;
+}
+img.avatar-icon{
+  height: 64px;
+}
