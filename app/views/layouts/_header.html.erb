@@ -19,12 +19,12 @@
                 <%=link_to "My Group Transactions", user_times_path(current_user), class: "link" %></div>
         </li>
         <li class="d-flex menu">
-            <div class="icons"><%= image_tag "icons/groups.svg", alt: "Groups", class: "icons"%></div>
+            <div class="icons"><%= image_tag "icons/share.svg", alt: "Groups", class: "icons"%></div>
             <div class="d-flex flex-column justify-content-center pl-2">
                 <%=link_to "New Transaction", new_time_spent_path, class: "link"%></div>
         </li>
         <li class="d-flex menu">
-            <div class="icons"><%= image_tag "icons/groups.svg", alt: "Groups", class: "icons"%></div>
+            <div class="icons"><%= image_tag "icons/log_out.svg", alt: "Groups", class: "icons"%></div>
             <div class="d-flex flex-column justify-content-center pl-2">
                 <%=link_to "Log out", logout_path, method: :delete, class: "link" %></div>
         </li>

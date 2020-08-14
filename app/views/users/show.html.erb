@@ -1,8 +1,24 @@
 <%=page_heading('User profile')%>
-<div class="d-flex align-items-center flex-column">
-    <%=image_tag(@user.avatar.url, alt: 'Image', class: "profile-image") if @user.avatar?%>
+<div class="profile">
+    <div class="d-flex align-items-center flex-column">
+        <%=image_tag(@user.avatar.url, alt: 'Image', class: "profile-image") if @user.avatar?%>
+    </div>
+    <div class="my-3">
+        <h3>User Name</h3>
+        <p class="ml-3"><%=@user.name%></p>
+    </div>
+    <div class="my-3">
+        <h3>Groups Index</h3>
+        <ul class="d-flex flex-column">
+            <li><%=link_to "All groups", groups_path, class: "ml-3" %></li>
+        </ul>
+    </div>
+    <div class="my-3">
+        <h3>Time Transactions</h3>
+        <ul class="d-flex flex-column">
+            <li><%=link_to "My work times", user_times_path, class: "ml-3" %></li>
+            <li><%=link_to "My external times", external_times_path, class: "ml-3" %></li>
+        </ul>
+    </div>
+
 </div>
-<p><%=@user.name%></p>
-<%=link_to "All groups", groups_path %>
-<%=link_to "My work times", user_times_path %>
-<%=link_to "My external times", external_times_path %>
