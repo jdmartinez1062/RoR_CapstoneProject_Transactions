@@ -1,4 +1,5 @@
 window.addEventListener("turbolinks:load", () => {
+    $("#time_spent_groups").prepend("<option value='0'>External time</option>");
     var x, i, j, l, ll, selElmnt, a, b, c;
     /* Look for any elements with the class "custom-select": */
     x = document.getElementsByClassName("custom-select");
@@ -14,7 +15,7 @@ window.addEventListener("turbolinks:load", () => {
         /* For each element, create a new DIV that will contain the option list: */
         b = document.createElement("DIV");
         b.setAttribute("class", "select-items select-hide");
-        for (j = 1; j < ll; j++) {
+        for (j = 0; j < ll; j++) {
             /* For each option in the original select element,
             create a new DIV that will act as an option item: */
             c = document.createElement("DIV");
@@ -79,5 +80,5 @@ window.addEventListener("turbolinks:load", () => {
     /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
     document.addEventListener("click", closeAllSelect);
-    $("#time_spent_groups").prepend("<option value='0' selected='External time'></option>");
+
 });

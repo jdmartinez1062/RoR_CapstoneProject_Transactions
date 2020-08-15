@@ -9,8 +9,8 @@ module TimeSpentsHelper
     end
   end
 
-  def author_name
-    current_user.name if action_name == 'group_times'
+  def group_times?
+    true if action_name == 'group_times'
   end
 
   def find_group(group_id)

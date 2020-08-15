@@ -15,7 +15,7 @@
     </div>
 
     <div class="custom-select">
-        <%=t.collection_select :groups, Group.all.order(:name),:id,:name, include_blank: :true %>
+        <%=t.collection_select :groups, current_user.groups.all.order(:name),:id,:name %>
     </div>
 
     <div class="form-button">
