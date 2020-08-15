@@ -57,6 +57,7 @@ Visit the finished project website: https://quiet-earth-68023.herokuapp.com/
       <img src="app/assets/images/app.jpg" width="50%">
   </a>
 </div>
+
 ### Built With
 
 - [Ruby](https://www.ruby-lang.org)
