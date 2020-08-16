@@ -11,7 +11,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
+
       log_out if logged_in?
       log_in(@user)
       flash[:success] = 'You have signed up successfully!'

@@ -1,6 +1,19 @@
-<h1><%=time_spents_title%></h1>
+<%=page_heading(time_spents_title)%>
 <div>
-    <h4>Total hours:</h4><%=@total%>
+    <div class="d-flex flex-row align-items-center mb-3">
+        <%if group_times?%>
+        <%=image_tag(@group.icon.url, alt: 'Image', class: 'profile-image')%>
+        <%end%>
+        <div class="ml-3 d-flex">
+
+            <h3 class="ml-1 group-name"><%=@group.name%></h3>
+        </div>
+
+    </div>
+
+
+    <h4 class="total">Total hours:</h4>
+    <p class="total"><%=@total%></p>
 </div>
 
 

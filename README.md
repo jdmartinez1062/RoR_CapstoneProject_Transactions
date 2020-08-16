@@ -51,10 +51,13 @@
 
 Project: Ruby on Rails Capstone Project: Group our transactions. [Assignment link](https://www.notion.so/Group-our-transactions-ccea2b6642664540a70de9f30bdff4ce)
 
-Visit the finished project website: https://murmuring-shore-10170.herokuapp.com/
-<a href="https://murmuring-shore-10170.herokuapp.com/">
-    <img src="app/assets/images/ror-social-app.jpg" width="50%">
-</a>
+Visit the finished project website: https://quiet-earth-68023.herokuapp.com/
+<div style="text-align:center">
+  <a href="https://quiet-earth-68023.herokuapp.com//">
+      <img src="app/assets/images/app.jpg" width="50%">
+  </a>
+</div>
+
 ### Built With
 
 - [Ruby](https://www.ruby-lang.org)

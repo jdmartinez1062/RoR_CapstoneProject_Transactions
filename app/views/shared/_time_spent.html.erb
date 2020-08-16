@@ -1,9 +1,17 @@
-<div>
-    <%=link_to(image_tag(time_spent.icon.url, alt: 'Image') , group_path(find_group(time_spent.id))) if (time_spent.class == Group) %>
-</div>
-<div>
-    <p><%=author_name%></p>
-    <p><%=time_spent.time_name%></p>
-    <p><%=time_spent.time_amount%></p>
-    <p><%=time_spent.time_log%></p>
+<div class="time">
+    <div class="d-flex">
+        <%=link_to(image_tag(time_spent.icon.url, alt: 'Image', class: 'profile-image') , group_path(find_group(time_spent.id))) if (time_spent.class == Group) %>
+        <div class="d-flex flex-column justify-content-center ml-3">
+            <%if action_name == 'group_times'%>
+            <div class="d-flex flex-row">
+                <p>Autor Name:</p>
+                <p class="ml-1"><%=time_spent.author_name%></p>
+            </div>
+            <%end%>
+            <p class="text-capitalize"><%=time_spent.time_name%></p>
+            <p>Amount: <%=time_spent.time_amount%></p>
+
+        </div>
+    </div>
+    <p class="mt-3">Created at: <%=time_spent.time_log%></p>
 </div>

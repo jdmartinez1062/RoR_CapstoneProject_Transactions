@@ -1,20 +1,22 @@
+<%=page_heading('New Group')%>
 <%=form_for @group, url: new_group_path, method: :post do |t|%>
 
 <%=render "shared/error_messages", object: t.object%>
+<div class="form-field ">
+    <div class="picture d-flex  align-items-center">
+        <%= image_tag "icons/user_avatar.svg", alt: "Groups", class: "profile-image", id: "target"%>
+        <p class="pl-3">Upload a picture</p>
+        <%= t.file_field :icon, accept: 'image/jpeg,image/gif,image/png', id: "user_avatar" %>
+    </div>
 
-<%=t.label :name%>
-<%=t.text_field :name%>
-<span class="picture">
-    <%= t.file_field :icon, accept: 'image/jpeg,image/gif,image/png' %>
-</span>
-<%=t.submit "Create new group"%>
+</div>
+
+<div class="form-field ">
+    <%=t.text_field :name, placeholder: "Group name"%>
+</div>
+
+<div class="form-button">
+    <%=t.submit "Create new group", class: "submit"%>
+</div>
 
 <%end%>
-<script type="text/javascript">
-    $('#group_icon').bind('change', function () {
-        var size_in_megabytes = this.files[0].size / 1024 / 1024;
-        if (size_in_megabytes > 5) {
-            alert('Maximum file size is 5MB. Please choose a smaller file.');
-        }
-    });
-</script>

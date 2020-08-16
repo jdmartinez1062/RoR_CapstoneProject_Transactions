@@ -1,7 +1,14 @@
-<h2>Group Transactions</h2>
-
-<div>
-    <%=image_tag(@group.icon.url, alt: 'Image') if @group.icon? %>
+<%=page_heading("#{@group.name} transactions")%>
+<div class="profile">
+    <div class="d-flex align-items-center">
+        <%=image_tag(@group.icon.url, alt: 'Image') if @group.icon? %>
+    </div>
+    <div class="my-3">
+        <h3>Group Name</h3>
+        <p><%=@group.name%></p>
+    </div>
+    <div class="my-3">
+        <h3>Group Time Transactions</h3>
+        <%=link_to "Group time spents", group_times_path(@group) %>
+    </div>
 </div>
-<p><%=@group.name%></p>
-<%=link_to "Group time spents", group_times_path(@group) %>

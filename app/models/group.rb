@@ -9,6 +9,6 @@ class Group < ApplicationRecord
 
   def group_spents
     time_spents.select('time_spents.id as time_id, time_spents.amount as time_amount,
-      time_spents.name as time_name, time_spents.created_at as time_log')
+      time_spents.name as time_name, time_spents.created_at as time_log, users.name as author_name').joins(:author)
   end
 end

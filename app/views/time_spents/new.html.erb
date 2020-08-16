@@ -1,13 +1,26 @@
+<%=page_heading('Time spends')%>
 <%=form_for @time_spent, url: new_time_spent_path, method: :post do |t|%>
 
 <%=render "shared/error_messages", object: t.object%>
+<div class="time-spend">
+    <h3 class="mb-3">Log your time spenditure</h3>
 
-<%=t.label :name%>
-<%=t.text_field :name%>
-<%=t.label :amount%>
-<%=t.number_field :amount, step: :any%>
-<%=t.collection_select :groups, Group.all.order(:name),:id,:name, include_blank: :true %>
 
-<%=t.submit "Submit time spent"%>
+    <div class="form-field ">
 
-<%end%>
+        <%=t.text_field :name, placeholder: "Time spent"%>
+    </div>
+    <div class="form-field ">
+        <%=t.number_field :amount, placeholder: "Amount", step: :any%>
+    </div>
+
+    <div class="custom-select">
+        <%=t.collection_select :groups, current_user.groups.all.order(:name),:id,:name %>
+    </div>
+
+    <div class="form-button">
+        <%=t.submit "Submit time spent" , class: "submit"%>
+    </div>
+
+    <%end%>
+</div>
