@@ -1,8 +1,5 @@
 class User < ApplicationRecord
   has_many :time_spents, foreign_key: :author_id
-
-  # has_many :user_spents, -> { where 'name != external' }, foreign_key: :author_id, class_name: :TimeSpent
-  # has_many :external_spents, -> { where name: 'external' }, foreign_key: :author_id, class_name: :TimeSpent
   has_many :groups, foreign_key: :selected_id
   mount_uploader :avatar, AvatarUploader
   validates :name, presence: true, length: { maximum: 20 }, uniqueness: { case_sensitive: false }
