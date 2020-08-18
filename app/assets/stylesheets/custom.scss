@@ -176,7 +176,7 @@ img.icons {
 div.icons {
   min-height: 50px;
   min-width: 50px;
-  background: url(asset_path("icons/circle.svg")) no-repeat;
+  background: url(asset_path("icons/circle.svg"));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -562,6 +562,9 @@ textarea:not(:focus),
 input:not(:focus) {
   color: #b1b2b8;
   font: 1.3rem "Proxima Nova", sans-serif;
+}
+input.submit:not(:focus){
+  color: #fff;
 }
 
 div.title-nav {

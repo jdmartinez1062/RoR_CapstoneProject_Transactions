@@ -3,12 +3,12 @@
     <div class="d-flex flex-row align-items-center mb-3">
         <%if group_times?%>
         <%=image_tag(@group.icon.url, alt: 'Image', class: 'profile-image')%>
-        <%end%>
+
         <div class="ml-3 d-flex">
 
             <h3 class="ml-1 group-name"><%=@group.name%></h3>
         </div>
-
+        <%end%>
     </div>
 
 

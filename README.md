@@ -53,7 +53,7 @@ Project: Ruby on Rails Capstone Project: Group our transactions. [Assignment lin
 
 Visit the finished project website: https://quiet-earth-68023.herokuapp.com/
 <div style="text-align:center">
-  <a href="https://quiet-earth-68023.herokuapp.com//">
+  <a href="https://quiet-earth-68023.herokuapp.com/">
       <img src="app/assets/images/app.jpg" width="50%">
   </a>
 </div>
