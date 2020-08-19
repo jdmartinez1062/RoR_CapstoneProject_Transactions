@@ -39,6 +39,8 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [Testing](#testing)
+- [Credits](#credits)
 - [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
@@ -90,21 +92,25 @@ git clone https://github.com/jdmartinez1062/RoR_CapstoneProject_Transactions
 
 1. Visit the web page
    
-        https://git.heroku.com/shielded-forest-28063.git
+        https://quiet-earth-68023.herokuapp.com/
 
-2. Open Console
+2. Log in or create a new user if you don't have one.
 
-    
-        rails db:migrate
-        rails db:seed
-        rails server         
-    
-
-3. Open your browser, copy and paste in your search bar
+3. To access time spents and external time spents for your user do it through the profile page. To access a group time spents do it on that group's page by searching for it in the "All groups" link.
    
-        http://localhost:3000/
+4. To create a new group follow the "All Groups" link and click on "create new".   
 
-        
+5. To create a new time spent click on the menu and on "New Transaction". You will need to have created a group previously to be able to select a group. 
+
+### Testing
+
+To test the app run the following command in the console:
+
+        rspec 
+
+## Credits
+This app was inspired on a design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
 <!-- CONTACT -->
 
 ## Contact
