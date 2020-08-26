@@ -2,7 +2,7 @@ RSpec.feature 'Signup', type: :feature do
   scenario 'User visits the signup page and signs up with correct information' do
     visit signup_path
 
-    fill_in 'Name', with: 'test1'
+    fill_in 'user_name', with: 'test1'
     attach_file('user_avatar', Rails.root + 'spec/fixtures/img1.jpg')
     click_button 'Sign up'
 
@@ -14,7 +14,7 @@ RSpec.feature 'Signup', type: :feature do
   scenario 'User visits the signup page and does not signs up with incorrect correct information' do
     visit signup_path
 
-    fill_in 'Name', with: ''
+    fill_in 'user_name', with: ''
     click_button 'Sign up'
     expect(page).to have_current_path(signup_path)
     expect(page).to have_css('div', text: 'There was a problem')
