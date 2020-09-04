@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  include ApplicationHelper
   before_action :require_login, only: %i[show]
+  before_action :set_user, only: %i[show]
+  before_action :set_page, only: %i[user_times external_times]
   def new
     @user = User.new
   end
 
-  def show
-    @user = User.find_by(id: params[:id])
-  end
+  def show; end
 
   def create
     @user = User.new(user_params)
@@ -25,13 +26,13 @@ class UsersController < ApplicationController
   end
 
   def user_times
-    @time_spents = current_user.group_time_spents.paginate(page: params[:page])
+    @time_spents = current_user.group_time_spents.paginate(page: @page)
     @total = @time_spents.calculate(:sum, :amount)
     render 'time_spents/index'
   end
 
   def external_times
-    @time_spents = current_user.external_time_spents.paginate(page: params[:page])
+    @time_spents = current_user.external_time_spents.paginate(page: @page)
     @total = @time_spents.total
     render 'time_spents/index'
   end

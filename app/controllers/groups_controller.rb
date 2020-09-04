@@ -1,9 +1,12 @@
 class GroupsController < ApplicationController
   include SessionsHelper
+  include ApplicationHelper
   before_action :require_login, only: %i[create new]
+  before_action :set_page, only: %i[index group_times]
+  before_action :set_id, only: %i[show group_times]
 
   def index
-    @groups = Group.all.paginate(page: params[:page])
+    @groups = Group.all.paginate(page: @page)
   end
 
   def new
@@ -23,12 +26,12 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find_by(id: params[:id])
+    @group = Group.find_by(id: @id)
   end
 
   def group_times
-    @group = Group.find_by(id: params[:id])
-    @time_spents = @group.group_spents.paginate(page: params[:page])
+    @group = Group.find_by(id: @id)
+    @time_spents = @group.group_spents.paginate(page: @page)
     @total = @time_spents.total
     render 'time_spents/index'
   end

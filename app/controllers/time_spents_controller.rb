@@ -28,10 +28,11 @@ class TimeSpentsController < ApplicationController
 
   def group_presence
     @time_spent = if (group = find_group)
-                    group.time_spents.build(time_params.merge(author_id: current_user.id))
 
+                    # group.time_spents << TimeSpent.create(time_params.merge(author_id: current_user.id))
+                    group.time_spents.create(time_params.merge(author_id: current_user.id))
                   else
-                    current_user.time_spents.build(time_params)
+                    current_user.time_spents.create(time_params)
                   end
     @time_spent.save
   end
