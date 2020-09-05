@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   include SessionsHelper
   include ApplicationHelper
-  before_action :require_login, only: %i[create new]
+  before_action :require_login, only: %i[create new show group_times]
   before_action :set_page, only: %i[index group_times]
   before_action :set_id, only: %i[show group_times]
 

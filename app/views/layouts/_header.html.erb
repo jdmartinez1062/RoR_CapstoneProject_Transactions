@@ -14,9 +14,19 @@
                 <%=link_to "Profile", user_path(current_user), class: "link" %></div>
         </li>
         <li class="d-flex menu">
-            <div class="icons"><%= image_tag "icons/time.svg", alt: "Groups", class: "icons"%></div>
+            <div class="icons"><%= image_tag "icons/groups.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "All groups", groups_path(current_user), class: "link" %></div>
+        </li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/user_time.svg", alt: "Groups", class: "icons"%></div>
             <div class="d-flex flex-column justify-content-center pl-2">
                 <%=link_to "My Group Transactions", user_times_path(current_user), class: "link" %></div>
+        </li>
+        <li class="d-flex menu">
+            <div class="icons"><%= image_tag "icons/time.svg", alt: "Groups", class: "icons"%></div>
+            <div class="d-flex flex-column justify-content-center pl-2">
+                <%=link_to "My External Transactions", user_times_path(current_user), class: "link" %></div>
         </li>
         <li class="d-flex menu">
             <div class="icons"><%= image_tag "icons/share.svg", alt: "Groups", class: "icons"%></div>
