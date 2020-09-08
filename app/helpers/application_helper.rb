@@ -7,6 +7,8 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  private
+
   def set_page
     @page = params[:page]
   end
