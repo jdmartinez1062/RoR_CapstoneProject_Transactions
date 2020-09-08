@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
   include SessionsHelper
+
+  before_action :find_session, only: %i[create]
   def new
     redirect_to current_user if current_user
   end
 
   def create
-    if (user = User.find_by(name: params[:session][:name]))
+    if (user = @session)
       log_in(user)
       flash[:success] = 'You have logged in!'
       redirect_to user
@@ -18,5 +20,11 @@ class SessionsController < ApplicationController
   def destroy
     flash[:success] = 'you have logged out successfully'
     log_out
+  end
+
+  private
+
+  def find_session
+    @session = User.find_by(name: params[:session][:name])
   end
 end
