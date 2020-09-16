@@ -1,17 +1,3 @@
-@font-face {
-  font-family: 'Proxima Nova';
-  font-style: normal;
-  font-weight: lighter;
-  src: font-url("proximanova-light.otf") format('opentype');
-}
-
-@font-face {
-  font-family: 'Proxima Nova';
-  font-style: normal;
-  font-weight: bold;
-  src: font-url("proximanova-bold.otf") format('opentype');
-}
-
 html,
 body,
 div,
@@ -174,9 +160,9 @@ img.icons {
 }
 
 div.icons {
+  
   min-height: 50px;
   min-width: 50px;
-  background: url(asset_path("icons/circle.svg")) no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
