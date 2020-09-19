@@ -15,7 +15,8 @@ RSpec.describe User, type: :model do
   describe 'time spent relation' do
     it 'builds a time relation with a group' do
       user1.groups.create(name: 'dev1', icon: test_img_path)
-      group.time_spents.create(name: 'C#', amount: 3, author_id: user1.id)
+      group1 = user1.groups.first
+      group1.time_spents.create(name: 'C#', amount: 3, author_id: user1.id)
       expect(user1).to eql(TimeSpent.find_by(author_id: user1.id).author)
     end
 
@@ -24,4 +25,16 @@ RSpec.describe User, type: :model do
       expect(user1).to eql(TimeSpent.find_by(author_id: user1.id).author)
     end
   end
+
+
+  it 'has many groups responses' do
+    relation = described_class.reflect_on_association(:groups)
+    expect(relation.macro).to eq :has_many
+  end
+  
+  it 'has many time spents responses' do
+    relation = described_class.reflect_on_association(:time_spents)
+    expect(relation.macro).to eq :has_many
+  end
+
 end

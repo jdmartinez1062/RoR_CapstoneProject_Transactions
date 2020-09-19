@@ -14,4 +14,16 @@ RSpec.describe Group, type: :model do
       expect(user1).to eql(TimeSpent.find_by(author_id: user1.id).author)
     end
   end
+
+
+  it 'has many groups responses' do
+    relation = described_class.reflect_on_association(:time_spents)
+    expect(relation.macro).to eq :has_and_belongs_to_many
+  end
+  
+  it 'has many time spents responses' do
+    relation = described_class.reflect_on_association(:selected)
+    expect(relation.macro).to eq :belongs_to
+  end
+
 end
