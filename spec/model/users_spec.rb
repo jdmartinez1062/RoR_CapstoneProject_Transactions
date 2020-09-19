@@ -26,15 +26,23 @@ RSpec.describe User, type: :model do
     end
   end
 
-
   it 'has many groups responses' do
     relation = described_class.reflect_on_association(:groups)
     expect(relation.macro).to eq :has_many
   end
-  
+
   it 'has many time spents responses' do
     relation = described_class.reflect_on_association(:time_spents)
     expect(relation.macro).to eq :has_many
   end
 
+  it 'should be valid' do 
+    u = User.new(name: 'test2', avatar: test_img_path)
+    expect(u).to be_valid
+  end
+
+  it 'should not be valid' do
+    u = User.new(name: '')
+    expect(u).to_not be_valid
+  end
 end
