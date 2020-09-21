@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
     expect(relation.macro).to eq :has_many
   end
 
-  it 'should be valid' do 
+  it 'should be valid' do
     u = User.new(name: 'test2', avatar: test_img_path)
     expect(u).to be_valid
   end
