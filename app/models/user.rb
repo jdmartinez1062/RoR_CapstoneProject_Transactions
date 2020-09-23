@@ -10,6 +10,9 @@ class User < ApplicationRecord
       time_spents.name as time_name, time_spents.created_at as time_log')
   end
 
+  # This method allows to pull group-time_spents pairs of
+  # data from the database for display in the time spents shared
+  # view without having to do a loop to find the attributes of the time_spents.
   def group_time_spents
     groups.select('groups.*, time_spents.id as time_id, time_spents.amount as time_amount,
        time_spents.name as time_name, time_spents.created_at as time_log').joins(:time_spents)

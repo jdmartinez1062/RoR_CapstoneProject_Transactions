@@ -18,9 +18,9 @@ RSpec.feature 'Transactions', type: :feature do
 
     initial_count = TimeSpent.count
 
-    fill_in 'Name', with: 'Movement script'
-    fill_in 'Amount', with: 5
-    expect(page).to have_select 'time_spent_groups', options: ['', group1.name]
+    fill_in 'time_spent_name', with: 'Movement script'
+    fill_in 'time_spent_amount', with: 5
+    expect(page).to have_select 'time_spent_groups', options: [group1.name]
     find('#time_spent_groups', text: group1.name).click
     click_button 'Submit time spent'
 
@@ -34,9 +34,9 @@ RSpec.feature 'Transactions', type: :feature do
     visit new_time_spent_path
     initial_count = TimeSpent.count
 
-    fill_in 'Name', with: 'Movement script'
-    fill_in 'Amount', with: 5
-    expect(page).to have_select 'time_spent_groups', options: ['', group1.name]
+    fill_in 'time_spent_name', with: 'Movement script'
+    fill_in 'time_spent_amount', with: 5
+    expect(page).to have_select 'time_spent_groups', options: [group1.name]
     find('#time_spent_groups', text: '').click
     click_button 'Submit time spent'
 

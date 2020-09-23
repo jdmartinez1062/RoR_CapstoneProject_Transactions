@@ -1,7 +1,7 @@
 <%=page_heading("#{@group.name} transactions")%>
 <div class="profile">
     <div class="d-flex align-items-center">
-        <%=image_tag(@group.icon.url, alt: 'Image') if @group.icon? %>
+        <%=image_tag(@group.icon.url, alt: 'Image', class: 'profile-image', id: 'target') if @group.icon? %>
     </div>
     <div class="my-3">
         <h3>Group Name</h3>

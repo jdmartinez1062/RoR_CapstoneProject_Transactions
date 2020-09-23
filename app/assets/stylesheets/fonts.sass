@@ -1,0 +1,18 @@
+@font-face
+  font-family: 'Proxima Nova'
+  font-style: normal
+  font-weight: lighter
+  src: font-url("proximanova-light.otf") format('opentype')
+
+@font-face 
+  font-family: 'Proxima Nova'
+  font-style: normal
+  font-weight: bold
+  src: font-url("proximanova-bold.otf") format('opentype')
+
+@mixin circle-background
+ background: url(asset_path("icons/circle.svg")) no-repeat !important
+
+div.icons
+ @include circle-background 
+
