@@ -53,9 +53,9 @@
 
 Project: Ruby on Rails Capstone Project: Group our transactions. [Assignment link](https://www.notion.so/Group-our-transactions-ccea2b6642664540a70de9f30bdff4ce)
 
-Visit the finished project website: https://quiet-earth-68023.herokuapp.com/
+Visit the finished project website: https://whispering-basin-25539.herokuapp.com
 <div style="text-align:center">
-  <a href="https://quiet-earth-68023.herokuapp.com//">
+  <a href="https://whispering-basin-25539.herokuapp.com">
       <img src="app/assets/images/app.jpg" width="50%">
   </a>
 </div>
@@ -92,7 +92,7 @@ git clone https://github.com/jdmartinez1062/RoR_CapstoneProject_Transactions
 
 1. Visit the web page
    
-        https://quiet-earth-68023.herokuapp.com/
+        https://whispering-basin-25539.herokuapp.com
 
 2. Log in or create a new user if you don't have one.
 
